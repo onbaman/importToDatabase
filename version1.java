@@ -227,7 +227,7 @@ public class connectionTomysql {
             //Insertion of items table
 //            String insertData, line, lineArray[], item[];
 //            StringBuilder tempLine;
-//            File openCSV = new File("C:\\Users\\Vinh Huynh\\IdeaProjects\\loadTomysql\\src\\items (1).csv");
+//            File openCSV = new File(FILEPATH);
 //            BufferedReader buffer;
 //            try {
 //                buffer = new BufferedReader(new FileReader(openCSV));
