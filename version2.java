@@ -1,4 +1,5 @@
 //Functionalized so much cleaner to use
+//Version 2.0
 
 import java.sql.*;
 import java.util.*;
