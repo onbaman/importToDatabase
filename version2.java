@@ -1,5 +1,6 @@
 //Functionalized so much cleaner to use
-//Version 2.0
+//Version 2.1
+//ADDED INPUT VALIDATION TO CREATE TABLE FUNCTION
 
 import java.sql.*;
 import java.util.*;
@@ -51,20 +52,29 @@ public class connectionTomysql {
                     , primaryKey = new StringBuilder();
         //System.out.println("Beer length: " + fieldLength);
 
-        //For table fields
-        tableString.append("CREATE TABLE ").append(CSVNAMES[type]).append("(");
-        for(int i = 0; i < fieldLength; i++)
-            tableString.append(FIELDS[type][i]).append(" VARCHAR(255), ");
+        //Check if table already exists
+        DatabaseMetaData dbm = conn.getMetaData();
+        ResultSet rs = dbm.getTables(null, null, CSVNAMES[type], null);
+        if(rs.next()) {
+            System.out.println(CSVNAMES[type] + " already exists");
+            return;
+        }
+        else {
+            //For table fields
+            tableString.append("CREATE TABLE ").append(CSVNAMES[type]).append("(");
+            for (int i = 0; i < fieldLength; i++)
+                tableString.append(FIELDS[type][i]).append(" VARCHAR(255), ");
 
-        //For primary keys
-        primaryKey.append(" PRIMARY KEY (");
-        for(int i = 0;i < keyLength; i++)
-            primaryKey.append(" ").append(FIELDSKEYS[type][i]);
-        primaryKey.append("))");
-        sqlTableString.append(tableString).append(primaryKey);
+            //For primary keys
+            primaryKey.append(" PRIMARY KEY (");
+            for (int i = 0; i < keyLength; i++)
+                primaryKey.append(" ").append(FIELDSKEYS[type][i]);
+            primaryKey.append("))");
+            sqlTableString.append(tableString).append(primaryKey);
 
-        System.out.println("Table Line: " + sqlTableString.toString());
-        //stmt.executeUpdate(sqlTableString.toString());
+            System.out.println("Table Line: " + sqlTableString.toString());
+            stmt.executeUpdate(sqlTableString.toString());
+        }
     }
     private static void insertData(Connection conn, int type) throws SQLException, IOException{
         String sqlInsert, currentLine, lineArray[];
