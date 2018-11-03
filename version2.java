@@ -138,7 +138,7 @@ public class connectionTomysql {
             //Establishing the connection
             //System.out.println("JDBC URL:" + jdbcUrl);
             conn = DriverManager.getConnection(jdbcUrl);
-            System.out.println("Connection successfull\nSuck my internet cock you cunt");
+            System.out.println("Connection successfull");
 
             /*0 = bars  | 3 = frequents    | 6 = sells****/
             /*1 = beers | 4 = likes        | 7 = items****/
