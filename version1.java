@@ -45,7 +45,7 @@ public class connectionTomysql {
             //Establishing the connection
             //System.out.println("JDBC URL:" + jdbcUrl);
             conn = DriverManager.getConnection(jdbcUrl);
-            System.out.println("Connection successfull\nSuck my internet cock you cunt");
+            System.out.println("Connection successfull");
 
             /**************************/
             /*CREATION OF THE TABLES*/
