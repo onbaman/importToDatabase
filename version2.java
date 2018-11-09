@@ -1,6 +1,6 @@
-//Functionalized so much cleaner to use
-//Version 2.1
-//ADDED INPUT VALIDATION TO CREATE TABLE FUNCTION
+/*Functionalized so much cleaner to use                       */
+/*Created by Vinh Huynh for CS336                             */
+/*Version 2.1 ADDED INPUT VALIDATION TO CREATE TABLE FUNCTION */
 
 import java.sql.*;
 import java.util.*;
