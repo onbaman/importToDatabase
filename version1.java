@@ -1,6 +1,7 @@
-//This is the first version
-//Mainly a rush job, next job will be functionalized to make it easier to use
-//Some areas have been modified to remove any identifying features
+/*This was a large rush job, looking at this code will        */
+/*give a good understanding of how I built my SQL queries     */
+/*Created by Vinh Huynh for CS336                             */
+/*Version 1                                                   */
 
 import java.sql.*;
 import java.util.*;
